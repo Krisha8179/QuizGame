@@ -77,7 +77,7 @@ createRoom.addEventListener('click', async(e) => {
       GameMessage.textContent = 'room is full , game is about to start';
       await startCountdown(5);
       GameMessage.textContent = '';
-      const getQuestions = await axios.get(`/question/random-question`);
+      const getQuestions = await axios.get(`https://quiz-game-flame-two.vercel.app/question/random-question`);
       let questions = getQuestions.data.randomQuestions;
       let questionIndex = 0;
       const displayNextQuestion = async () => {
