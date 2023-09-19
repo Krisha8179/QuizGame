@@ -11,7 +11,7 @@ async function signup(event){
             phone_number,
             password
             }
-        const response = await axios.post("http://Localhost:3000/user/signup",signupDetails) 
+        const response = await axios.post("/user/signup",signupDetails) 
         if(response.status=== 201){
             alert('user registered successfully')
             window.location.href = "../login/login.html"

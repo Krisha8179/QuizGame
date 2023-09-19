@@ -34,9 +34,12 @@ app.use(userRoutes);
 app.use(forgotPasswordRoutes);
 app.use(questionRoutes);
 
-app.use((req, res) => {
-    console.log('url is:', req.url);
-    res.sendFile(path.join(__dirname, `client/${req.url}`));
+app.use(express.static(path.join(__dirname, "./client")));
+app.get("*", function (_, res) {
+    res.sendFile(path.join(__dirname, `client/login/login.html`),
+    function (err){
+      res.status(500).send(err);
+    })
 })
 
 io.on('connection', socket => {
