@@ -5,7 +5,7 @@ async function forgotPassword(event){
     const userDetails = {
         Email
     }
-    const response = await axios.post("https://quiz-game-flame-two.vercel.app/password/forgotpassword", userDetails)
+    const response = await axios.post("/password/forgotpassword", userDetails)
     if(response.status === 200){
         document.body.innerHTML += '<div style="color:red;">Mail Successfully sent <div>'
 

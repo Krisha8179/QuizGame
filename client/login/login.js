@@ -7,7 +7,7 @@ async function login(event){
         email,
         password
         }
-    const response = await axios.post("https://quiz-game-flame-two.vercel.app/user/login",loginDetails) 
+    const response = await axios.post("/user/login",loginDetails) 
     if(response.status === 200){
         alert(response.data.message) 
         localStorage.setItem('token', response.data.token)
